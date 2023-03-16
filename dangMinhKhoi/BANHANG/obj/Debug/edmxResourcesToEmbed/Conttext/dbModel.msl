@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="webbanhangModelStoreContainer" CdmEntityContainer="webbanhangEntities">
+    <EntitySetMapping Name="Brands">
+      <EntityTypeMapping TypeName="webbanhangModel.Brand">
+        <MappingFragment StoreEntitySet="Brand">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="showonhomepage" ColumnName="showonhomepage" />
+          <ScalarProperty Name="displayorder" ColumnName="displayorder" />
+          <ScalarProperty Name="cretedonutc" ColumnName="cretedonutc" />
+          <ScalarProperty Name="updateonutc" ColumnName="updateonutc" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="catetories">
+      <EntityTypeMapping TypeName="webbanhangModel.catetory">
+        <MappingFragment StoreEntitySet="catetory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="showOnHomePage" ColumnName="showOnHomePage" />
+          <ScalarProperty Name="displayorder" ColumnName="displayorder" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="cretedonutc" ColumnName="cretedonutc" />
+          <ScalarProperty Name="updateonutc" ColumnName="updateonutc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="webbanhangModel.order">
+        <MappingFragment StoreEntitySet="order">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="pase" ColumnName="pase" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="cretedonutc" ColumnName="cretedonutc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="webbanhangModel.product">
+        <MappingFragment StoreEntitySet="product">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="caterogyId" ColumnName="caterogyId" />
+          <ScalarProperty Name="shortdes" ColumnName="shortdes" />
+          <ScalarProperty Name="fulldesciption" ColumnName="fulldesciption" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="pricediscount" ColumnName="pricediscount" />
+          <ScalarProperty Name="typeid" ColumnName="typeid" />
+          <ScalarProperty Name="slug" ColumnName="slug" />
+          <ScalarProperty Name="brandld" ColumnName="brandld" />
+          <ScalarProperty Name="deleted" ColumnName="deleted" />
+          <ScalarProperty Name="showonhomepage" ColumnName="showonhomepage" />
+          <ScalarProperty Name="displayorder" ColumnName="displayorder" />
+          <ScalarProperty Name="createdonutc" ColumnName="createdonutc" />
+          <ScalarProperty Name="updatedonutc" ColumnName="updatedonutc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="webbanhangModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="firsname" ColumnName="firsname" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="isAdim" ColumnName="isAdim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

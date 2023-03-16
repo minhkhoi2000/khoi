@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="webbanhangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="avatar" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="showonhomepage" Type="Boolean" />
+    <Property Name="displayorder" Type="Int32" />
+    <Property Name="cretedonutc" Type="DateTime" Precision="3" />
+    <Property Name="updateonutc" Type="DateTime" Precision="3" />
+    <Property Name="deleted" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="catetory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="avatar" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="slug" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="showOnHomePage" Type="Boolean" />
+    <Property Name="displayorder" Type="Int32" />
+    <Property Name="deleted" Type="Boolean" />
+    <Property Name="cretedonutc" Type="DateTime" Precision="3" />
+    <Property Name="updateonutc" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="pase" Type="Double" />
+    <Property Name="status" Type="Boolean" />
+    <Property Name="cretedonutc" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="caterogyId" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="shortdes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="fulldesciption" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="price" Type="Double" />
+    <Property Name="pricediscount" Type="Double" />
+    <Property Name="typeid" Type="Int32" />
+    <Property Name="slug" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="brandld" Type="Int32" />
+    <Property Name="deleted" Type="Boolean" />
+    <Property Name="showonhomepage" Type="Boolean" />
+    <Property Name="displayorder" Type="Int32" />
+    <Property Name="createdonutc" Type="DateTime" Precision="3" />
+    <Property Name="updatedonutc" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="firsname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="isAdim" Type="Boolean" />
+  </EntityType>
+  <EntityContainer Name="webbanhangEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Brands" EntityType="Self.Brand" />
+    <EntitySet Name="catetories" EntityType="Self.catetory" />
+    <EntitySet Name="orders" EntityType="Self.order" />
+    <EntitySet Name="products" EntityType="Self.product" />
+    <EntitySet Name="users" EntityType="Self.user" />
+  </EntityContainer>
+</Schema>

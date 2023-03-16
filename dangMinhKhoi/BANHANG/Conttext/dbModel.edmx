@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="webbanhangModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="100" />
+          <Property Name="avatar" Type="nchar" MaxLength="100" />
+          <Property Name="slug" Type="nchar" MaxLength="100" />
+          <Property Name="showonhomepage" Type="bit" />
+          <Property Name="displayorder" Type="int" />
+          <Property Name="cretedonutc" Type="datetime" />
+          <Property Name="updateonutc" Type="datetime" />
+          <Property Name="deleted" Type="bit" />
+        </EntityType>
+        <EntityType Name="catetory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="avatar" Type="nchar" MaxLength="100" />
+          <Property Name="slug" Type="nvarchar" MaxLength="100" />
+          <Property Name="showOnHomePage" Type="bit" />
+          <Property Name="displayorder" Type="int" />
+          <Property Name="deleted" Type="bit" />
+          <Property Name="cretedonutc" Type="datetime" />
+          <Property Name="updateonutc" Type="datetime" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="pase" Type="float" />
+          <Property Name="status" Type="bit" />
+          <Property Name="cretedonutc" Type="datetime" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="caterogyId" Type="nchar" MaxLength="100" />
+          <Property Name="shortdes" Type="nvarchar" MaxLength="100" />
+          <Property Name="fulldesciption" Type="nvarchar" MaxLength="100" />
+          <Property Name="price" Type="float" />
+          <Property Name="pricediscount" Type="float" />
+          <Property Name="typeid" Type="int" />
+          <Property Name="slug" Type="varchar" MaxLength="50" />
+          <Property Name="brandld" Type="int" />
+          <Property Name="deleted" Type="bit" />
+          <Property Name="showonhomepage" Type="bit" />
+          <Property Name="displayorder" Type="int" />
+          <Property Name="createdonutc" Type="datetime" />
+          <Property Name="updatedonutc" Type="datetime" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="firsname" Type="varchar" MaxLength="50" />
+          <Property Name="lastname" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="isAdim" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="webbanhangModelStoreContainer">
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="catetory" EntityType="Self.catetory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="webbanhangModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="avatar" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="slug" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="showonhomepage" Type="Boolean" />
+          <Property Name="displayorder" Type="Int32" />
+          <Property Name="cretedonutc" Type="DateTime" Precision="3" />
+          <Property Name="updateonutc" Type="DateTime" Precision="3" />
+          <Property Name="deleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="catetory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="avatar" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="slug" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="showOnHomePage" Type="Boolean" />
+          <Property Name="displayorder" Type="Int32" />
+          <Property Name="deleted" Type="Boolean" />
+          <Property Name="cretedonutc" Type="DateTime" Precision="3" />
+          <Property Name="updateonutc" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="pase" Type="Double" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="cretedonutc" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="caterogyId" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="shortdes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fulldesciption" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="price" Type="Double" />
+          <Property Name="pricediscount" Type="Double" />
+          <Property Name="typeid" Type="Int32" />
+          <Property Name="slug" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="brandld" Type="Int32" />
+          <Property Name="deleted" Type="Boolean" />
+          <Property Name="showonhomepage" Type="Boolean" />
+          <Property Name="displayorder" Type="Int32" />
+          <Property Name="createdonutc" Type="DateTime" Precision="3" />
+          <Property Name="updatedonutc" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="firsname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="isAdim" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="webbanhangEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Brands" EntityType="Self.Brand" />
+          <EntitySet Name="catetories" EntityType="Self.catetory" />
+          <EntitySet Name="orders" EntityType="Self.order" />
+          <EntitySet Name="products" EntityType="Self.product" />
+          <EntitySet Name="users" EntityType="Self.user" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="webbanhangModelStoreContainer" CdmEntityContainer="webbanhangEntities">
+          <EntitySetMapping Name="Brands">
+            <EntityTypeMapping TypeName="webbanhangModel.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="slug" ColumnName="slug" />
+                <ScalarProperty Name="showonhomepage" ColumnName="showonhomepage" />
+                <ScalarProperty Name="displayorder" ColumnName="displayorder" />
+                <ScalarProperty Name="cretedonutc" ColumnName="cretedonutc" />
+                <ScalarProperty Name="updateonutc" ColumnName="updateonutc" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="catetories">
+            <EntityTypeMapping TypeName="webbanhangModel.catetory">
+              <MappingFragment StoreEntitySet="catetory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="avatar" ColumnName="avatar" />
+                <ScalarProperty Name="slug" ColumnName="slug" />
+                <ScalarProperty Name="showOnHomePage" ColumnName="showOnHomePage" />
+                <ScalarProperty Name="displayorder" ColumnName="displayorder" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="cretedonutc" ColumnName="cretedonutc" />
+                <ScalarProperty Name="updateonutc" ColumnName="updateonutc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="webbanhangModel.order">
+              <MappingFragment StoreEntitySet="order">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="pase" ColumnName="pase" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="cretedonutc" ColumnName="cretedonutc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="products">
+            <EntityTypeMapping TypeName="webbanhangModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="caterogyId" ColumnName="caterogyId" />
+                <ScalarProperty Name="shortdes" ColumnName="shortdes" />
+                <ScalarProperty Name="fulldesciption" ColumnName="fulldesciption" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="pricediscount" ColumnName="pricediscount" />
+                <ScalarProperty Name="typeid" ColumnName="typeid" />
+                <ScalarProperty Name="slug" ColumnName="slug" />
+                <ScalarProperty Name="brandld" ColumnName="brandld" />
+                <ScalarProperty Name="deleted" ColumnName="deleted" />
+                <ScalarProperty Name="showonhomepage" ColumnName="showonhomepage" />
+                <ScalarProperty Name="displayorder" ColumnName="displayorder" />
+                <ScalarProperty Name="createdonutc" ColumnName="createdonutc" />
+                <ScalarProperty Name="updatedonutc" ColumnName="updatedonutc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="webbanhangModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="firsname" ColumnName="firsname" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="isAdim" ColumnName="isAdim" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
