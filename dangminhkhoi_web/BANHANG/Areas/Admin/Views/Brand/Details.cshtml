@@ -1,0 +1,83 @@
+﻿@model BANHANG.contex.Brand
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="content-wrapper">
+    <h2>Details</h2>
+
+    <div>
+        <h4>Brand</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.avatar)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.avatar)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.slug)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.slug)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.showonhomepage)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.showonhomepage)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.displayorder)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.displayorder)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.cretedonutc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cretedonutc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.updateonutc)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.updateonutc)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.deleted)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.deleted)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>

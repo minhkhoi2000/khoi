@@ -1,0 +1,88 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<BANHANG.contex.Brand>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="content-wrapper">
+    <h2>Thương Hiệu</h2>
+
+    <p>
+        @Html.ActionLink("Tạo Mới", "Create")
+    </p>
+    @using (Html.BeginForm("Index", "Brand", FormMethod.Get))
+    {
+        <p>
+            Tìm tên sản phẩm:@Html.TextBox("SearchString", ViewBag.CurentFilter as string)
+            <input type="submit" value="Tìm kiếm" />
+        </p>
+    }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().avatar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().slug)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().showonhomepage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().displayorder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().cretedonutc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().updateonutc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstOrDefault().deleted)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    <img src="~/Content/images/items/@Html.DisplayFor(modelItem => item.avatar)" style="width:100px;height:100px" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.slug)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.showonhomepage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.displayorder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cretedonutc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.updateonutc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.deleted)
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit","Product",new { id = item.id })" class="btn btn-ms btn-primary "> <i class="fas fa-edit text-white"></i></a>
+                    <a href="@Url.Action("Details","Product",new { id = item.id })" class="btn btn-ms btn-primary "> <i class="fas fa-eye text-white"></i></a>
+                    <a href="@Url.Action("Delete","Product",new { id = item.id })" class="btn btn-ms btn-primary "> <i class="fas fa-trash-alt text-white"></i></a>
+                </td>
+            </tr>
+        }
+    </table>
+    Trang @(Model.PageCount<Model.PageNumber ? 0:Model.PageNumber) of @Model.PageCount
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, currenFiter = ViewBag.currenFiter }))
+</div>
